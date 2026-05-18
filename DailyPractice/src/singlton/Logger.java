@@ -9,10 +9,12 @@ public class Logger {
 		
 	}
 	
-	//created this static method so that we can call the proivate constroctor.
+	//created this static method so that we can call the private constroctor.
 	public static Logger getLogger() {
 		if (logger == null) {
-		 logger = new Logger();
+			synchronized (Logger.class){   //used sychronized block to make it thread safe class
+			 logger = new Logger();
+		 }
 		}
 		return logger;
 	}

@@ -6,6 +6,9 @@ public class ThreadTwo implements Runnable {
 	public void run() {
 		for(int i=0; i<=2; i++) {
 		System.out.println("thread two by implementing runnable interface");
+		System.out.println(
+                "Thread : " +
+                Thread.currentThread().getName());
 		}
 	}
 	
