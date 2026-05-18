@@ -1,0 +1,35 @@
+# ---- macOS ----
+.DS_Store
+
+# ---- IntelliJ IDEA ----
+.idea/
+*.iml
+out/
+
+# ---- Eclipse ----
+.metadata/
+bin/
+*.class
+*.log
+
+# Eclipse project files
+*.tmp
+*.bak
+*.swp
+
+# ---- Java ----
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# ---- Logs ----
+*.log
+
+# ---- Other build artifacts ----
+/target/
+/build/
+/out/
