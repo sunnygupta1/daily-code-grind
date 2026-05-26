@@ -1,0 +1,83 @@
+
+📌 SQL Interview Notes
+🔹 Question: Find second largest salary from employee
+answer:
+one way :
+select max(salary) from employee where salary < (select max(salary) from employee);
+thinking: yha phle max salary nikale the where salary is smaller then max salary kr diye.
+
+
+
+second way :
+select distinct salary from employee order by desc limit 1 offset 1;
+thinking: first distinct salary nikale, then order by desecending (mean large to small) kr diye then limit 1 lga diye to pick only one data then used offset 1 to skip first data.
+
+
+
+---
+🔹 Question: find 5th largest salary
+select distinct salary from employee order by desc limit 1 offset 4;
+thinking: did limit 1 and skiped 4 data.
+
+
+
+---
+🔹 Question: write sql qery to fetch dublicate name
+answer:
+select name, count(*) from employee group by name having count > 1;
+
+
+
+
+---
+🔹 Question: find nth highest salary
+answer:
+select distinct salary from employee order by desc limit 1 offset n-1;
+thinking: n meant inteviewer want to say find largest salary of any nth position developer need.
+
+
+
+
+---
+🔹 Question: remove dublicate record
+answer:
+select distinct * from employee;
+
+
+
+
+---
+🔹 Question: employee having same salary
+answer:
+select salary from employee group by salary;
+
+
+
+
+---
+🔹 DELETE vs TRUNCATE vs DROP
+DELETE removes data row by row
+DELETE FROM employee WHERE salary < 30000;
+
+
+
+
+TRUNCATE removes all data quickly but keeps the table
+TRUNCATE TABLE employee;
+
+
+
+DROP removes the table itself
+DROP TABLE employee;
+
+---
+🔹 INNER JOIN vs LEFT JOIN
+INNER JOIN → “Gives only the common records between two tables.”
+SELECT e.name, d.department_name
+FROM employee e
+INNER JOIN department d ON e.department_id = d.id;
+
+LEFT JOIN → “Gives all records from the left table, and matching ones from the right. If no match, NULL is shown.”
+SELECT e.name, d.department_name
+FROM employee e
+LEFT JOIN department d ON e.department_id = d.id;
