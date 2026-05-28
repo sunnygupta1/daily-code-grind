@@ -17,7 +17,7 @@ public class CompletableFutureExample {
 
         future.join();
         
-        
+        //dusra 
         CompletableFuture.runAsync(()->{
         	System.out.println("sending mail");
         });

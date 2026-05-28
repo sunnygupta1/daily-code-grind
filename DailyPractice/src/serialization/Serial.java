@@ -14,7 +14,7 @@ public class Serial {
         // absolute path where the serialized file will be created
         String fileName = "/Users/sunny/Documents/Java Learning/serialization practice/serial.txt";
         
-        // FileOutputStream is used to create/open a file at the given path
+        // FileOutputStream is used to open a file at the given path
         FileOutputStream fos = new FileOutputStream(fileName);
         
         // ObjectOutputStream wraps fos to allow writing objects into the file

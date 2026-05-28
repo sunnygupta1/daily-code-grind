@@ -3,6 +3,7 @@ package StreamApi;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class OperationOnEmployee {
@@ -37,6 +38,8 @@ public class OperationOnEmployee {
 		Map<Integer, Double> map2 = emp.stream()
 			    .collect(Collectors.groupingBy(Employee::getAge, Collectors.summingDouble(Employee::getSalary)));
 			System.out.println(map);
+			
+			System.out.println(emp.stream().collect(Collectors.groupingBy(x->x.getAge(), Collectors.toList())));
 
 		
 	}
