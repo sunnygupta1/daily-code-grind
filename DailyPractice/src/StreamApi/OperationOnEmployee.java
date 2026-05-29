@@ -40,7 +40,7 @@ public class OperationOnEmployee {
 			System.out.println(map);
 			
 			System.out.println(emp.stream().collect(Collectors.groupingBy(x->x.getAge(), Collectors.toList())));
-
+			System.out.println(emp.stream().sorted((x,y)->x.getSalary()-y.getSalary()).toList());
 		
 	}
 
